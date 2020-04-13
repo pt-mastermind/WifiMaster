@@ -13,11 +13,11 @@ echo "(_______)\_______/|/       \_______/    |/     \||/     \|\_______)   )_( 
 
 get_start()
 {
-	rm -r /opt/WIFI-MASTER/Password_Hash/
-	mkdir /opt/WIFI-MASTER/Password_Hash/
-	echo -e "\n\n\e[31mWlan Card:\e[0m"
-	read wlan
-	clear
+rm -r /opt/WIFI-MASTER/Password_Hash/
+mkdir /opt/WIFI-MASTER/Password_Hash/
+echo -e "\n\n\e[31mWlan Card:\e[0m"
+read wlan
+clear
 }
 
 first_scan()
