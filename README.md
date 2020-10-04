@@ -17,5 +17,8 @@ Automation tool for evil twin attack.
 * step 1: Plugin wlan card to your machine 
 
 * step 2: Run the script and injoy!
+```
+        Bash WifiMaster.sh
+```
 
 If you want to choose another web page go to: /opt/WifiMaster/program_files/server and then put there the page you want to and name it " index.html ".
