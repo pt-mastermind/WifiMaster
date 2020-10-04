@@ -38,7 +38,7 @@ count=1
 echo "NetWorks List:"
 echo "*If there is no essid so the bssid will be save as essid"
 cat  /opt/WifiMaster/Password_Hash/Whandshake_wpa-01.kismet.netxml  | grep -o -P 'SSID>'.*'<'  | cut -c6-22  > BSSID.txt
-cat  /opt/WifiMaster/Password_Hash/Whandshake_wpa-01.kismet.netxml  | grep -o -P '<essid cloaked="false">'.*'<'  | cut -c24-31 >  ESSID.txt
+cat  /opt/WifiMaster/Password_Hash/Whandshake_wpa-01.kismet.netxml  | grep -o -P '<essid cloaked="false">'.*''  | cut -c24-100 | awk -F\< '{print $1}' > ESSID.txt
 paste ESSID.txt BSSID.txt | while IFS="$(printf '\t')" read -r essid bssid
 
 do
@@ -139,6 +139,3 @@ kill_AP
 }
 
 main
-
-
-
