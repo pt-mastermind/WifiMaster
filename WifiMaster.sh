@@ -13,8 +13,8 @@ echo "(_______)\_______/|/       \_______/    |/     \||/     \|\_______)   )_( 
 
 get_start()
 {
-rm -r /opt/WIFI-MASTER/Password_Hash/
-mkdir /opt/WIFI-MASTER/Password_Hash/
+rm -r /opt/WifiMaster/Password_Hash/
+mkdir /opt/WifiMaster/Password_Hash/
 echo -e "\n\n\e[31mWlan Card:\e[0m"
 read wlan
 clear
@@ -27,7 +27,7 @@ iwconfig $wlan mode monitor
 ifconfig $wlan up
 echo -e "\tPress ctl + c to stop the scan"
 sleep 3
-airodump-ng $wlan   -w /opt/WIFI-MASTER/Password_Hash/Whandshake_wpa
+airodump-ng $wlan   -w /opt/WifiMaster/Password_Hash/Whandshake_wpa
 clear
 }
 
@@ -37,8 +37,8 @@ filter_output()
 count=1
 echo "NetWorks List:"
 echo "*If there is no essid so the bssid will be save as essid"
-cat  /opt/WIFI-MASTER/Password_Hash/Whandshake_wpa-01.kismet.netxml  | grep -o -P 'SSID>'.*'<'  | cut -c6-22  > BSSID.txt
-cat  /opt/WIFI-MASTER/Password_Hash/Whandshake_wpa-01.kismet.netxml  | grep -o -P '<essid cloaked="false">'.*'<'  | cut -c24-31 >  ESSID.txt
+cat  /opt/WifiMaster/Password_Hash/Whandshake_wpa-01.kismet.netxml  | grep -o -P 'SSID>'.*'<'  | cut -c6-22  > BSSID.txt
+cat  /opt/WifiMaster/Password_Hash/Whandshake_wpa-01.kismet.netxml  | grep -o -P '<essid cloaked="false">'.*'<'  | cut -c24-31 >  ESSID.txt
 paste ESSID.txt BSSID.txt | while IFS="$(printf '\t')" read -r essid bssid
 
 do
@@ -73,7 +73,7 @@ deep_scan()
 {
 rm -r /opt/WifiMaster/Password_Hash
 mkdir /opt/WifiMaster/Password_Hash
-airodump-ng $wlan --bssid $c_bssid  --write /opt/WIFI-MASTER/Password_Hash/wpa_HandShake
+airodump-ng $wlan --bssid $c_bssid  --write /opt/WifiMaster/Password_Hash/wpa_HandShake
 }
 
 
