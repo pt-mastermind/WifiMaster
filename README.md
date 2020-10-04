@@ -3,10 +3,13 @@ Automation tool for evil twin attack.
 
 # How to install
 * step 1:
+```
         chmod +x install.sh
+```
 * step 2:
+```
         ./install.sh
-        
+```
 * Make sure that reg.py file and index.html file is in the same directory with the installation file (install.sh).
 
 # How to Use
